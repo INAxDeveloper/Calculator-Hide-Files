@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_gph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.calculator.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_setupPasswordFragment"
+            app:destination="@id/setupPasswordFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_hiddenFragment"
+            app:destination="@id/hiddenFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/setupPasswordFragment"
+        android:name="com.example.calculator.fragments.SetupPasswordFragment"
+        android:label="activity_change_password"
+        tools:layout="@layout/activity_change_password">
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/hiddenFragment"
+        android:name="com.example.calculator.fragments.HiddenFragment"
+        android:label="fragment_hidden"
+        tools:layout="@layout/fragment_hidden">
+
+        <action
+            android:id="@+id/action_hiddenFragment_to_setupPasswordFragment"
+            app:destination="@id/setupPasswordFragment" />
+        <action
+            android:id="@+id/action_hiddenFragment_to_viewFolderFragment"
+            app:destination="@id/viewFolderFragment" />
+
+        <action
+            android:id="@+id/action_hiddenFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewFolderFragment"
+        android:name="com.example.calculator.fragments.ViewFolderFragment"
+        android:label="fragment_view_folder"
+        tools:layout="@layout/fragment_view_folder">
+
+        <argument
+            android:name="folder"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.calculator.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
